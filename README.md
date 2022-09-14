@@ -15,3 +15,5 @@ Our data was obtained from the Bureau of Labor Statistics and can be found [here
 ## FIGURES
 
 ## REFERENCES
+[Milestone 1: Creating a Hypothesis](https://docs.google.com/document/d/1at2bhZCavVOYFlX82WuMa91ym0iVsscmdqEKFPdcN-A/edit?usp=sharing)
+[Milestone 2: Exploratory Data Analysis & Analysis Plan](https://docs.google.com/document/d/1wKe0dPM4gLki5tGYAPK8kjtGr--3sGUSg0mg04wiEy0/edit?usp=sharing)

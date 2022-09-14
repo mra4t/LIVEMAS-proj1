@@ -1,5 +1,3 @@
-# Released under MIT License
-
 Copyright (c) 2022 Madeleine Ashby.
 
 Copyright (c) 2022 Ayushi Ambhore.

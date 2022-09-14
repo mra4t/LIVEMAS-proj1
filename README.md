@@ -1,7 +1,9 @@
 # Prediction of Gender Unemployment Rates for 2023
 
 ## SRC
-## Data
+### Installing / Building the Code
+### Code Usage
+## DATA
 Our data was obtained from the Bureau of Labor Statistics and can be found [here](https://github.com/mra4t/LIVEMAS-proj1/blob/main/Data/Unemployment.xlsx).
 ### Data Dictionary
 | Column  | Description | Potential Values |
@@ -10,5 +12,6 @@ Our data was obtained from the Bureau of Labor Statistics and can be found [here
 | Male  | Provides the reported unemployment rate amongst males in the United States for the given timestamp | A non-negative percentage between 0 and 100. |
 | Female | Provides the reported unemployment rate amongst females in the United States for the given timestamp | A non-negative percentage between 0 and 100. |
 
-## Figures
-## References
+## FIGURES
+
+## REFERENCES

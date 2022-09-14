@@ -2,6 +2,7 @@
 
 ## SRC
 ## Data
+### Data Dictionary
 | Column  | Description | Potential Values |
 | ------ |  ----------- | ----------------
 | Timestamp  | Indicates the month and year for which the unemployment rate is being reported  | Every combination of a month (Jan-Dec), followed by a year (1950-2022).  For 2022, only months Jan-Aug are valid. |

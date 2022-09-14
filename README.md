@@ -2,7 +2,7 @@
 
 ## SRC
 ## Data
-Our data was obtained from the Bureau of Labor Statistics and can be found [here] (https://github.com/mra4t/LIVEMAS-proj1/blob/main/Data/Unemployment.xlsx).
+Our data was obtained from the Bureau of Labor Statistics and can be found [here](https://github.com/mra4t/LIVEMAS-proj1/blob/main/Data/Unemployment.xlsx).
 ### Data Dictionary
 | Column  | Description | Potential Values |
 | ------ |  ----------- | ----------------

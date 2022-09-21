@@ -1,0 +1,123 @@
+
+---
+title: "Prediction of Gender Unemployment Rates for 2023"
+author: "Madeleine Ashby"
+date: "9/13/2022"
+output: html_document
+fig_width: 6 
+fig_height: 4 
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# Import necessary libraries / packages
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(tstools)
+library(zoo)
+```
+
+# Exploratory Data Analysis
+
+## Data Collection
+The data we are using was obtained from the [Bureau of Labor Statistics] (https://data.bls.gov/cgi-bin/surveymost?ln) which provides labor force statistics from the current United States population survey.  We selected two categories of data -- unemployment rate for women 20 years and older, and unemployment rate for men 20 years and older -- from the year 1950 to present.
+
+The resulting dataset is a multi-series table that gives the unemployment rate (as a number representing a percent) for both men and women each month from January 1950 to August 2022.
+
+```{r}
+unemployment_data <- read_excel("C:/Users/Maddie/Documents/DS 4002/Project 1/Unemployment.xlsx")
+```
+
+## Data Cleaning
+```{r}
+# Transpose the data to be more easily readable
+unemployment_data <- t(unemployment_data)
+
+# Make sure it's actually a dataframe to be able to use functions on it in the future
+unemployment_data <- as.data.frame(unemployment_data)
+
+# Change column names
+unemployment_data <-
+  unemployment_data %>%
+  rename(
+    Male = V1,
+    Female = V2
+  )
+
+# Remove first row with "Series ID" by subsetting
+unemployment_data <- unemployment_data[-1, ]
+
+View(unemployment_data)
+```
+
+## Preliminary Analysis
+
+### Univariate Analysis
+```{r}
+male_time_series <- ts(unemployment_data$Male, start = c(1950, 1), end = c(2022, 8), frequency=12)
+#print(male_time_series)
+plot(male_time_series,
+     main = "Male Unemployment Rate in the United States from 1950 to 2022",
+     xlab = "Time",
+     ylab = "Unemployment Rate"
+     )
+
+female_time_series <- ts(unemployment_data$Female, start = c(1950, 1), end = c(2022, 8), frequency=12)
+#print(female_time_series)
+plot(female_time_series,
+     main = "Female Unemployment Rate in the United States from 1950 to 2022",
+     xlab = "Time",
+     ylab = "Unemployment Rate"
+     )
+
+```
+
+### Bivariate Analysis
+```{r}
+tsplot(Male=male_time_series, Female=female_time_series,
+       plot_title = "Unemployment Rate in the United States from 1950 to 2022: Male vs Female",
+       auto_legend = TRUE
+       )
+```
+
+
+# Analysis
+
+## ARIMA
+```{r}
+unemployment_data$Female <- as.double(unemployment_data$Female)
+unemployment_data$Male <- as.double(unemployment_data$Male)
+
+# Female ARIMA
+female_ARIMA <- auto.arima(unemployment_data$Female)
+female_ARIMA
+
+#residuals
+plot.ts(female_ARIMA$residuals)
+
+female_prediction <- forecast(female_ARIMA, level=c(95), h=12)
+plot(female_prediction)
+
+#BoxL-jung Test
+Box.test(female_prediction$resid, lag=5, type="Ljung-Box")
+
+# Male ARIMA
+male_ARIMA <- auto.arima(unemployment_data$Male)
+male_ARIMA
+
+#residuals
+plot.ts(male_ARIMA$residuals)
+
+male_prediction <- forecast(male_ARIMA, level=c(95), h=12)
+plot(male_prediction)
+
+#BoxL-jung Test
+Box.test(male_prediction$resid, lag=5, type="Ljung-Box")
+
+```
+
+

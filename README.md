@@ -15,6 +15,8 @@ Our data was obtained from the Bureau of Labor Statistics and can be found [here
 ## FIGURES
 
 ## REFERENCES
-[Milestone 1: Creating a Hypothesis](https://docs.google.com/document/d/1at2bhZCavVOYFlX82WuMa91ym0iVsscmdqEKFPdcN-A/edit?usp=sharing)
+[1] [Milestone 1: Creating a Hypothesis](https://docs.google.com/document/d/1at2bhZCavVOYFlX82WuMa91ym0iVsscmdqEKFPdcN-A/edit?usp=sharing)
 
-[Milestone 2: Exploratory Data Analysis & Analysis Plan](https://docs.google.com/document/d/1wKe0dPM4gLki5tGYAPK8kjtGr--3sGUSg0mg04wiEy0/edit?usp=sharing)
+[2] [Milestone 2: Exploratory Data Analysis & Analysis Plan](https://docs.google.com/document/d/1wKe0dPM4gLki5tGYAPK8kjtGr--3sGUSg0mg04wiEy0/edit?usp=sharing)
+
+[3] A. Biswal, “Time Series forecasting in R: Step-by-step guide with examples [updated],” Simplilearn.com, 12-Jul-2022. [Online]. Available: https://www.simplilearn.com/tutorials/data-science-tutorial/time-series-forecasting-in-r. [Accessed: 21-Sep-2022]. 

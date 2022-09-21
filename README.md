@@ -2,7 +2,9 @@
 
 ## SRC
 ### Installing / Building the Code
+To install the code, download the RMD file in the SRC file. Open this in RStudio and run the code. All of the libraries that need to be installed are already included at the top of the file, so the code solely needs to be ran to successfully build the code. 
 ### Code Usage
+This code can be used for forecasing purposes of a time series data about unemployment. The code can be used to visually see the unemployment rate in 2023 for males and females and validation tables to validate the results. 
 ## DATA
 Our data was obtained from the Bureau of Labor Statistics and can be found [here](https://github.com/mra4t/LIVEMAS-proj1/blob/main/Data/Unemployment.xlsx).
 ### Data Dictionary
